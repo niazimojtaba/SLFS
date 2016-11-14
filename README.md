@@ -1,7 +1,7 @@
 # SLFS
 Author : Mojtaba Niazi (If you want to use this package please email to me mojtaba.niazi.095@gmail.com)
 This code refer to SLFS algorithm. You can have source article from "http://www.sciencedirect.com/science/article/pii/S0952197616301105". 
-Abstract
+\b<Abstract>
 
 Feature selection is an important task in many problems occurring in pattern recognition, bioinformatics, machine learning and data mining applications. The feature selection approach enables us to reduce the computation burden and the falling accuracy effect of dealing with huge number of features in typical learning problems. There is a variety of techniques for feature selection in supervised learning problems based on different selection metrics. In this paper, we propose a novel unified framework for feature selection built on the graphical models and information theoretic tools. The proposed approach exploits the structure learning among features to select more relevant and less redundant features to the predictive modeling problem according to a primary novel likelihood based criterion. In line with the selection of the optimal subset of features through the proposed method, it provides us the Bayesian network classifier without the additional cost of model training on the selected subset of features. The optimal properties of our method are established through empirical studies and computational complexity analysis. Furthermore the proposed approach is evaluated on a bunch of benchmark datasets based on the well-known classification algorithms. Extensive experiments confirm the significant improvement of the proposed approach compared to the earlier works.
 
