@@ -17,7 +17,7 @@ How to run SLFS algorithm on linux based os
 <code>g++ main.cpp -o SLFS
 
 -What things you should notice about input file?
-SLFS uses 9-fold cross validation for calculating accuray, So you should combine all data in a text file as input. In the input file each rows of data are samples from your data, So each sample contions features. The last feature is class vaiable. Finally data should be seperated with space.
+SLFS uses 10-fold cross validation for calculating accuray, So you should combine all data in a text file as input. In the input file each rows of data are samples from your data, So each sample contions features. The last feature is class vaiable. Finally data should be seperated with space.
 
 -How to run?
 
