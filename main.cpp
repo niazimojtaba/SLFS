@@ -718,39 +718,29 @@ int main(int argc , char **argv)
 		numLine++;
 	}
 	input.close();
-	CE 1;
 	NUM_Data = (numLine*90) / 100+1;
 	NUM_TEST = (numLine*10) / 100;
 	int step = NUM_TEST;
 	NUM_Feature = numCol;
-	
 	adj = new int*[NUM_Feature+1];
 	for (int i = 0 ; i  < NUM_Feature+1 ; i++)
 		adj[i] = new int[NUM_Feature+1];
 	
 	output_label = new double [NUM_TEST];
-	CE 2;
 	C_test = new double[NUM_TEST];
-	CE 3;
 	C = new double [NUM_Data];
-	CE 4;
 	ux = new set<double>[NUM_Feature + 1];
-	CE 5;
 	maxValF = new double [NUM_Feature];
-	CE 6;
 	pa = new vector<int>[NUM_Feature+1];
-	CE 7;
     IPAXCF  = new pair<double , double>*[NUM_Feature+1];
     train = new double*[NUM_Data];
     for(int i = 0 ; i < NUM_Data ; i++)
         train[i] = new double[NUM_Feature+1];
-    CE 8;
     test = new double*[NUM_TEST];
 	for( int i = 0 ; i < NUM_TEST ; i++)
 	{
 		test[i] = new double[NUM_Feature+1];
 	}
-    CE 9 ;
     memset(maxValF,INT_MIN,NUM_Feature);
 	int fold = 0 ;
 	input.open(argv[1]);
@@ -768,9 +758,6 @@ int main(int argc , char **argv)
 			double fd;
 			ss >> fd;
 			ux[f].insert(fd);
-			double rnd = (double)rand() / (double)INT_MAX;
-			cerr << rnd << endl;
-			//~ if((rnd < 0.8 || vInsert >= NUM_TEST) && tInsert < NUM_Data)
 			if(tInsert < NUM_Data)
 			{
 				train[tInsert][f] = fd;
@@ -783,7 +770,7 @@ int main(int argc , char **argv)
 			{
 				test[vInsert][f] =fd;
 				if(f == NUM_Feature)
-					C_test[tInsert]= fd;
+					C_test[vInsert]= fd;
 				insertInTrain = false;
 			}
 			else
