@@ -824,13 +824,13 @@ int main(int argc , char **argv)
 		cerr << "bfs_ " << endl;
 		bfs_(g_);
 		fold++;
-	}while(fold < 9);
+	}while(fold < 10);
 	delete []train;
 	delete []test;
 	delete [] IPAXCF;
 	delete []ux;
 	delete []output_label;
 	delete []pa;
-	cerr << acc/9 << endl;
+	cerr << acc/10 << endl;
     return 0;
 }
