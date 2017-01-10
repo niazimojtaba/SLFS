@@ -646,7 +646,7 @@ void bfs_(Graph g_)
 }
 int swapdata(int firstInx,int lastInx)
 {
-	for(int rt = firstInx,tinx=0 ; tinx < NUM_TEST ; tinx++,rt++)
+	for(int rt = firstInx,tinx=0 ; tinx < NUM_TEST && rt < lastInx ; tinx++,rt++)
 	{
 		for(int c = 0 ; c < NUM_Feature+1 ; c++)
 		{
@@ -674,6 +674,7 @@ int main(int argc , char **argv)
 
 	ADD = 0.02;
 	SEMILAR = 0.02;
+	
 	new_.rlim_cur = (long long)1024*1024;
 	new_.rlim_max = (long long)1024*1024*1024*1024;
 	newp = &new_;
@@ -803,6 +804,7 @@ int main(int argc , char **argv)
 			swapdata(firstInx,lastInx);
 			firstInx = lastInx;
 			lastInx += step;
+			lastInx = std::min(lastInx, NUM_Data);
 		}
 		firstFold = false;
 		vector<ent> ve;
@@ -810,10 +812,12 @@ int main(int argc , char **argv)
 		
 		for (int f = 0 ; f < NUM_Feature ; f++)
 		{
+			cerr << "f " << f;
 			double icx = cxic(f);
 			double H = HF(f);
 			g_.insert_(f,icx,H);
 		}
+		cerr << endl;
 		clock_t edTime = clock();
 		difft = edTime -  stTime;
 		
